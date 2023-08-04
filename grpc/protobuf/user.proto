@@ -9,7 +9,7 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  int32 state_code =1;
+  int32 state_code = 1;
   string state_msg = 2;
 }
 
@@ -19,13 +19,13 @@ message RegisterRequest {
 }
 
 message RegisterResponse {
-  int32 state_code =1;
+  int32 state_code = 1;
   string state_msg = 2;
 }
 
 enum Gender {
   SEX = 0;
-  MAN =1;
+  MAN = 1;
   WOMEN = 2;
 }
 
