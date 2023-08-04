@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package users;
+option go_package = "proto/user";
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  int32 state_code =1;
+  string state_msg = 2;
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  int32 state_code =1;
+  string state_msg = 2;
+}
+
+enum Gender {
+  SEX = 0;
+  MAN =1;
+  WOMEN = 2;
+}
+
+message User {
+  string name = 1;
+  int32 age = 2;
+  Gender gender = 3;
+}
+
+service UserService {
+  rpc Login(LoginRequest) returns(LoginResponse);
+  rpc Register(RegisterRequest) returns(RegisterResponse);
+}
+
